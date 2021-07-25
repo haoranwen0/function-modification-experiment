@@ -1,7 +1,16 @@
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import Experiment from "./pages/Experiment";
+import Instructions from "./pages/Instructions";
+
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Router>
+        <Route path="/experiment" exact component={Experiment} />
+        <Route path="/" exact component={Instructions} />
+      </Router>
     </>
   );
 }

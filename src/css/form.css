@@ -1,0 +1,24 @@
+.form-text-input-group {
+  position: relative;
+}
+
+.form-text-input-group :is(label) {
+  position: absolute;
+  background-color: white;
+  top: -10px;
+  font-size: 16px;
+  padding: 0 4px 0 0;
+}
+
+.form-text-input-group :is(input) {
+  width: 250px;
+}
+
+.form-slider-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-slider-input-group :is(label) {
+  margin-bottom: 4px;
+}

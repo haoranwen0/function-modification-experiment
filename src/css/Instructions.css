@@ -1,0 +1,20 @@
+.instructions {
+  min-height: 100vh;
+  width: 100%;
+  padding: 48px 0;
+}
+
+.instructions__main {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.instructions__form {
+  margin-top: 24px;
+}
+
+@media only screen and (max-width: 900px) {
+  .instructions__main {
+    width: 90%;
+  }
+}

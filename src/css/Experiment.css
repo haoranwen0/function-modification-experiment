@@ -1,0 +1,41 @@
+.experiment {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.experiment__header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: #444444;
+}
+
+.experiment__header :is(span) {
+  margin-right: 24px;
+  color: white;
+  background-color: coral;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.experiment__main {
+  width: 800px;
+  margin: 128px auto;
+}
+
+.function-description {
+  margin-bottom: 24px;
+}
+
+.experiment :is(.btn.submit) {
+  margin-top: 24px;
+  float: right;
+}
+
+@media only screen and (max-width: 900px) {
+  .experiment__main {
+    width: 90%;
+  }
+}
