@@ -1,0 +1,5 @@
+{
+    "tableName": "functionModificationSubjectInformations",
+    "partitionKeyName": "email",
+    "partitionKeyType": "S"
+}

@@ -10,6 +10,18 @@
       "StackName": "amplify-functionmodification-dev-03128",
       "StackId": "arn:aws:cloudformation:us-east-1:062943963762:stack/amplify-functionmodification-dev-03128/01c7b100-ec38-11eb-a0b7-12ee986ec865",
       "AmplifyAppId": "d1y6tb94vxq4h0"
+    },
+    "categories": {
+      "function": {
+        "functionModificationSubjectInformations": {
+          "deploymentBucketName": "amplify-functionmodification-dev-03128-deployment",
+          "s3Key": "amplify-builds/functionModificationSubjectInformations-76584f53626f646d7763-build.zip"
+        },
+        "functionModificationFunctionSubmissions": {
+          "deploymentBucketName": "amplify-functionmodification-dev-03128-deployment",
+          "s3Key": "amplify-builds/functionModificationFunctionSubmissions-49337551395841386564-build.zip"
+        }
+      }
     }
   }
 }

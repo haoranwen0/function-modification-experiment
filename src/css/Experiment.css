@@ -29,11 +29,6 @@
   margin-bottom: 24px;
 }
 
-.experiment :is(.btn.submit) {
-  margin-top: 24px;
-  float: right;
-}
-
 @media only screen and (max-width: 900px) {
   .experiment__main {
     width: 90%;

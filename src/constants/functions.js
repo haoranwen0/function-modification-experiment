@@ -1,4 +1,6 @@
-export const functionOne = `package com.mkyong;
+export const functionOne = {
+  description: "apple",
+  function: `package com.mkyong;
 
 import java.util.function.Function;
 
@@ -14,9 +16,12 @@ public class JavaMoney {
 
     }
 
-}`;
+}`,
+};
 
-export const functionTwo = `package com.mkyong;
+export const functionTwo = {
+  description: "pear",
+  function: `package com.mkyong;
 
 import java.util.function.Function;
 
@@ -34,9 +39,12 @@ public class Java8Function2 {
 
     }
 
-}`;
+}`,
+};
 
-export const functionThree = `package com.mkyong;
+export const functionThree = {
+  description: "banana",
+  function: `package com.mkyong;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -77,4 +85,5 @@ public class Java8Function3 {
         return str.length();
     }
 
-}`;
+}`,
+};

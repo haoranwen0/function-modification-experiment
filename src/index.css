@@ -39,15 +39,39 @@ input[type="text"] {
   transition: all 200ms ease;
 }
 
-input[type="text"]:hover {
+input[type="text"]:hover,
+input[type="text"]:focus {
   border: 1px solid rgba(81, 203, 238, 1);
   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
 
 input[type="text"]:focus {
   outline: none;
-  border: 1px solid rgba(81, 203, 238, 1);
-  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+input[type="number"] {
+  margin-top: 4px;
+  width: 200px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+textarea {
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
 }
 
 .btn {
@@ -61,7 +85,7 @@ input[type="text"]:focus {
 
 .btn.submit:hover {
   color: whitesmoke;
-  background-color: var(--pastel-green);
+  background-color: var(--light-blue);
 }
 
 .flex {
@@ -76,10 +100,45 @@ input[type="text"]:focus {
   flex-direction: column;
 }
 
+.flex-end {
+  justify-content: flex-end;
+}
+
 .space-between {
   justify-content: space-between;
 }
 
 .margin-bottom-12 {
   margin-bottom: 12px;
+}
+
+.margin-bottom-36 {
+  margin-bottom: 36px;
+}
+
+.margin-right-12 {
+  margin-right: 12px;
+}
+
+.margin-left-12 {
+  margin-left: 12px;
+}
+
+.margin-top-24 {
+  margin-top: 24px;
+}
+
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 48px 0;
+}
+
+.main-content {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.font-weight-600 {
+  font-weight: 600;
 }

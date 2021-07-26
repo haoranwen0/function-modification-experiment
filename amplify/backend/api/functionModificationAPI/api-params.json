@@ -1,0 +1,55 @@
+{
+    "paths": [
+        {
+            "name": "/subject-informations",
+            "lambdaFunction": "functionModificationSubjectInformations",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/subject-informations"
+        },
+        {
+            "name": "/function-submissions",
+            "lambdaFunction": "functionModificationFunctionSubmissions",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/function-submissions"
+        }
+    ],
+    "resourceName": "functionModificationAPI",
+    "apiName": "functionModificationAPI",
+    "functionArns": [
+        {
+            "lambdaFunction": "functionModificationSubjectInformations"
+        },
+        {
+            "lambdaFunction": "functionModificationFunctionSubmissions"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-functionmodification-dev-03128-authRole",
+        "unAuthRoleName": "amplify-functionmodification-dev-03128-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "functionModificationSubjectInformations",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "functionModificationFunctionSubmissions",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "c81613d6"
+}

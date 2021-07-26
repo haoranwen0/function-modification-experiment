@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { API } from "aws-amplify";
 
 import { sliderJavaExperience } from "../constants/variables";
+import Loading from "./Loading";
 
 import "../css/form.css";
 
 function InstructionsForm() {
   const history = useHistory();
 
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [sonaid, setSonaid] = useState("");
@@ -15,16 +18,21 @@ function InstructionsForm() {
 
   function onSubmit(e) {
     e.preventDefault();
+    setLoading((prev) => !prev);
     const data = {
       name: name,
       email: email,
       sonaid: sonaid,
       javaExperience: sliderJavaExperience[javaExperience],
     };
-    history.push({
-      pathname: "/experiment",
+    API.post("functionModificationAPI", "/subject-informations", {
+      body: data,
+    }).then((res) => {
+      setLoading((prev) => !prev);
+      history.push({
+        pathname: "/experiment",
+      });
     });
-    console.log(data);
   }
 
   return (
@@ -72,9 +80,12 @@ function InstructionsForm() {
           />
         </div>
       </div>
-      <button onClick={onSubmit} className="btn submit">
-        Submit
-      </button>
+      <div className="flex row">
+        <button onClick={onSubmit} className="btn submit margin-right-12">
+          Submit
+        </button>
+        <Loading loading={loading} />
+      </div>
     </form>
   );
 }

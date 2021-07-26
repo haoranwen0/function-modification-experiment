@@ -1,11 +1,11 @@
 import React from "react";
 
 function ExperimentHeader(props) {
-  const { time } = props;
+  const { time, currFunction } = props;
 
   return (
     <>
-      <span>Function 1</span>
+      <span>Function {currFunction + 1}</span>
       <span id="timer">{time / 1000}</span>
     </>
   );
