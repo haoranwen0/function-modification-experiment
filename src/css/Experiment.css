@@ -1,21 +1,29 @@
+@import url("./variables.css");
+
 .experiment {
   min-height: 100vh;
   width: 100%;
 }
 
 .experiment__header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 50px;
   width: 100%;
-  background-color: #444444;
+  background-color: #111;
 }
 
 .experiment__header :is(span) {
   margin-right: 24px;
   color: white;
-  background-color: coral;
+  font-weight: 300;
+  background-color: #333;
+  box-shadow: 0 0 3px 0 var(--pale-pastel-green) inset;
+  pointer-events: none;
   padding: 6px 12px;
   border-radius: 4px;
 }

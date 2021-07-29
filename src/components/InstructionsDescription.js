@@ -4,36 +4,31 @@ function InstructionsDescription() {
   return (
     <>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-        voluptates, perferendis molestiae exercitationem aliquid unde ad
-        tenetur, nam quasi assumenda aliquam fugit consequatur? Cum ratione a
-        error inventore totam necessitatibus ad. Ea, quo nulla. Totam veritatis
-        quos molestias consequuntur nemo adipisci et minima molestiae voluptatem
-        maxime. Itaque unde vel consequatur.
+        For this experiment your task is to modify a simple piece of code in
+        java in order to achieve an indicated functionality.
+      </p>
+      <p>There will be (x - TBD) rounds.</p>
+      <div className="flex column margin-bottom-12">
+        <span>
+          You can receive up to $30 for participating in this experiment:
+        </span>
+        <span className="margin-left-24">
+          - The base amount will be $10 for completing both problems.
+        </span>
+        <span className="margin-left-24">
+          - You will receive an additional bonus of up to $10 dollars per
+          problem, conditional on getting it right, depending on how fast you do
+          it.
+        </span>
+      </div>
+      <p>
+        <span className="important-red">Important! </span>
+        You have to complete all the experiment in a single run, do not refresh
+        or attempt to go back or all your data will be lost.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-        voluptates, perferendis molestiae exercitationem aliquid unde ad
-        tenetur, nam quasi assumenda aliquam fugit consequatur? Cum ratione a
-        error inventore totam necessitatibus ad. Ea, quo nulla. Totam veritatis
-        quos molestias consequuntur nemo adipisci et minima molestiae voluptatem
-        maxime. Itaque unde vel consequatur.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-        voluptates, perferendis molestiae exercitationem aliquid unde ad
-        tenetur, nam quasi assumenda aliquam fugit consequatur? Cum ratione a
-        error inventore totam necessitatibus ad. Ea, quo nulla. Totam veritatis
-        quos molestias consequuntur nemo adipisci et minima molestiae voluptatem
-        maxime. Itaque unde vel consequatur.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-        voluptates, perferendis molestiae exercitationem aliquid unde ad
-        tenetur, nam quasi assumenda aliquam fugit consequatur? Cum ratione a
-        error inventore totam necessitatibus ad. Ea, quo nulla. Totam veritatis
-        quos molestias consequuntur nemo adipisci et minima molestiae voluptatem
-        maxime. Itaque unde vel consequatur.
+        It's best to complete this on a desktop/laptop on fullscreen using
+        Google Chrome as your browser.
       </p>
     </>
   );

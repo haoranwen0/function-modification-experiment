@@ -15,11 +15,15 @@
       "function": {
         "functionModificationSubjectInformations": {
           "deploymentBucketName": "amplify-functionmodification-dev-03128-deployment",
-          "s3Key": "amplify-builds/functionModificationSubjectInformations-76584f53626f646d7763-build.zip"
+          "s3Key": "amplify-builds/functionModificationSubjectInformations-444d657a456c474e4332-build.zip"
         },
         "functionModificationFunctionSubmissions": {
           "deploymentBucketName": "amplify-functionmodification-dev-03128-deployment",
-          "s3Key": "amplify-builds/functionModificationFunctionSubmissions-49337551395841386564-build.zip"
+          "s3Key": "amplify-builds/functionModificationFunctionSubmissions-7a486f454252526f7076-build.zip"
+        },
+        "functionModificationSurvey": {
+          "deploymentBucketName": "amplify-functionmodification-dev-03128-deployment",
+          "s3Key": "amplify-builds/functionModificationSurvey-54707436556d4177597a-build.zip"
         }
       }
     }

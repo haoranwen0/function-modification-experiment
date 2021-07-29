@@ -12,6 +12,7 @@ function Editor(props) {
     <>
       <h3>Editor</h3>
       <ControlledEditor
+        className="codemirror-editor"
         onBeforeChange={handleChange}
         value={value}
         options={{

@@ -1,31 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { API } from "aws-amplify";
+import { toast } from "react-toastify";
 
 import FunctionDescription from "../components/FunctionDescription";
 import Editor from "../components/Editor";
 import ExperimentHeader from "../components/ExperimentHeader";
-import {
-  functionOne,
-  functionTwo,
-  functionThree,
-} from "../constants/functions";
+// import { Aplus, Aminus, Bplus } from "../constants/functions";
 import Loading from "../components/Loading";
+import { warningOptions } from "../constants/toasts";
 
 import "../css/Experiment.css";
 
 // Constants
-const functions = [functionOne, functionTwo, functionThree];
+const email = localStorage.getItem("email");
 
 function Experiment() {
+  const functions = JSON.parse(localStorage.getItem("functions"));
+
   // Initialize useHistory hook
   const history = useHistory();
 
   // Initialize useState constants
-  const [value, setValue] = useState(functions[0].function);
+  const [value, setValue] = useState(
+    functions === null ? "" : functions[0].function
+  );
   const [time, setTime] = useState(0);
   const [currFunction, setCurrFunction] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
+  const [functionSubmissions, setFunctionSubmissions] = useState([]);
+
+  // useEffect(() => {
+  //   console.log(functions);
+  // }, [functions]);
 
   useEffect(() => {
     var interval = null;
@@ -40,29 +48,53 @@ function Experiment() {
 
   // Handle changes made in the editor
   function handleChange(editor, data, value) {
+    toast.dismiss();
     setValue(value);
+    setConfirmed(false);
   }
 
-  function onSubmit() {
-    setTime(0);
-    if (currFunction !== functions.length - 1) {
+  useEffect(() => {
+    if (functionSubmissions.length !== 0) {
+      // console.log(functionSubmissions);
       setLoading((prev) => !prev);
-      setCurrFunction((prev) => prev + 1);
       API.post("functionModificationAPI", "/function-submissions", {
         body: {
-          email: "testing@gmail.com",
-          originalFunction: functions[0].function,
-          editedFunction: value,
+          email: email,
+          functionSubmissions: functionSubmissions,
         },
       }).then((res) => {
-        console.log(res);
+        // console.log(res);
+        setTime(0);
+        setConfirmed((prev) => !prev);
         setValue(functions[currFunction].function);
         setLoading((prev) => !prev);
+        if (functionSubmissions.length === functions.length) {
+          history.push({
+            pathname: "/survey",
+          });
+        }
       });
+    }
+    //eslint-disable-next-line
+  }, [functionSubmissions]);
+
+  function onSubmit() {
+    if (!confirmed) {
+      toast(
+        "Warning: You are about to submit. Are you sure? If yes, click confirm. If not, continue editing the function",
+        warningOptions
+      );
+      setConfirmed((prev) => !prev);
     } else {
-      history.push({
-        pathname: "/survey",
-      });
+      var obj = {};
+      obj["function"] = value;
+      obj["time"] = time;
+      setFunctionSubmissions((curr) => [...curr, obj]);
+      // console.log("check");
+      toast.dismiss();
+      if (currFunction !== functions.length - 1) {
+        setCurrFunction((prev) => prev + 1);
+      }
     }
   }
 
@@ -88,7 +120,7 @@ function Experiment() {
             className="btn submit margin-left-12"
             style={loading ? { pointerEvents: "none", opacity: "0.5" } : null}
           >
-            {currFunction === functions.length - 1 ? "Submit" : "Next"}
+            {confirmed ? "Confirm" : "Submit"}
           </button>
         </div>
       </main>

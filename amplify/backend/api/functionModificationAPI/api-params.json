@@ -15,6 +15,14 @@
                 "open": true
             },
             "policyResourceName": "/function-submissions"
+        },
+        {
+            "name": "/survey",
+            "lambdaFunction": "functionModificationSurvey",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/survey"
         }
     ],
     "resourceName": "functionModificationAPI",
@@ -25,6 +33,9 @@
         },
         {
             "lambdaFunction": "functionModificationFunctionSubmissions"
+        },
+        {
+            "lambdaFunction": "functionModificationSurvey"
         }
     ],
     "privacy": {
@@ -49,7 +60,15 @@
                 "Name",
                 "Arn"
             ]
+        },
+        {
+            "category": "function",
+            "resourceName": "functionModificationSurvey",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
         }
     ],
-    "uuid": "c81613d6"
+    "uuid": "22b3da15"
 }

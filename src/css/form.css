@@ -20,8 +20,15 @@
   flex-direction: column;
 }
 
+.form-select-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-select-group :is(label) {
+  margin-bottom: 8px;
+}
+
 .form-comments :is(label) {
   margin-bottom: 4px;
 }
-
-

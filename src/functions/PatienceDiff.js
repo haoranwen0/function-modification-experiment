@@ -117,6 +117,7 @@ export function patienceDiff(aLines, bLines, diffPlusFlag) {
     var lcs = [];
     if (0 < ja.length) {
       let n = ja.length - 1;
+      //eslint-disable-next-line
       var lcs = [ja[n][ja[n].length - 1]];
       while (lcs[lcs.length - 1].prev) {
         lcs.push(lcs[lcs.length - 1].prev);

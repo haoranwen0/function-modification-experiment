@@ -7,6 +7,10 @@
     "functionModificationFunctionSubmissions": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "functionModificationSurvey": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   },
   "function": {
@@ -47,6 +51,25 @@
           }
         }
       ]
+    },
+    "functionModificationSurvey": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "functionModificationSurvey",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ]
     }
   },
   "api": {
@@ -65,6 +88,14 @@
         {
           "category": "function",
           "resourceName": "functionModificationFunctionSubmissions",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "functionModificationSurvey",
           "attributes": [
             "Name",
             "Arn"
