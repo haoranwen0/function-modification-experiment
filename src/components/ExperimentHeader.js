@@ -6,7 +6,7 @@ function ExperimentHeader(props) {
   return (
     <>
       <span>Function {currFunction + 1}</span>
-      <span id="timer">{time / 1000}</span>
+      <span id="timer">{time / 1000} s</span>
     </>
   );
 }

@@ -1,16 +1,18 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { API } from "aws-amplify";
 
 import { warningOptions } from "../constants/toasts";
 import Loading from "./Loading";
 
-// constants
-const email = localStorage.getItem("email");
-
 function SurveyForm() {
+  const email = localStorage.getItem("email");
+
+  // Initialize useHistory
+  const history = useHistory();
+
   // Initialize useState constants
-  //eslint-disable-next-line
   const [loading, setLoading] = useState(false);
   const [quesOne, setQuesOne] = useState(5);
   const [quesTwo, setQuesTwo] = useState(5);
@@ -45,8 +47,11 @@ function SurveyForm() {
       API.post("functionModificationAPI", "/survey", {
         body: data,
       }).then((res) => {
-        setLoading((prev) => !prev);
         console.log(res);
+        setLoading((prev) => !prev);
+        history.push({
+          pathname: "/submitted",
+        });
       });
     }
   }

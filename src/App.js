@@ -6,6 +6,7 @@ import Experiment from "./pages/Experiment";
 import Instructions from "./pages/Instructions";
 import Survey from "./pages/Survey";
 import Difference from "./pages/Difference";
+import Submitted from "./pages/Submitted";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/experiment" exact component={Experiment} />
         <Route path="/survey" exact component={Survey} />
         <Route path="/difference" exact component={Difference} />
+        <Route path="/submitted" exact component={Submitted} />
       </Router>
       <ToastContainer />
     </>
