@@ -12,10 +12,8 @@ import { warningOptions } from "../constants/toasts";
 
 import "../css/Experiment.css";
 
-// Constants
-const email = localStorage.getItem("email");
-
 function Experiment() {
+  const email = localStorage.getItem("email");
   const functions = JSON.parse(localStorage.getItem("functions"));
 
   // Initialize useHistory hook
@@ -30,10 +28,6 @@ function Experiment() {
   const [loading, setLoading] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
   const [functionSubmissions, setFunctionSubmissions] = useState([]);
-
-  // useEffect(() => {
-  //   console.log(functions);
-  // }, [functions]);
 
   useEffect(() => {
     var interval = null;
@@ -64,6 +58,7 @@ function Experiment() {
         },
       }).then((res) => {
         // console.log(res);
+        window.scrollTo(0, 0);
         setTime(0);
         setConfirmed((prev) => !prev);
         setValue(functions[currFunction].function);

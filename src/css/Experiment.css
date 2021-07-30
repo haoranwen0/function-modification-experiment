@@ -19,10 +19,11 @@
 
 .experiment__header :is(span) {
   margin-right: 24px;
-  color: white;
+  color: #fff;
   font-weight: 300;
   background-color: #333;
-  box-shadow: 0 0 3px 0 var(--pale-pastel-green) inset;
+  /* border: 1px solid #dddddd; */
+  /* box-shadow: 0 0 3px 0 var(--pale-pastel-green) inset; */
   pointer-events: none;
   padding: 6px 12px;
   border-radius: 4px;
@@ -30,15 +31,10 @@
 
 .experiment__main {
   width: 800px;
-  margin: 128px auto;
+  padding: 128px 0;
+  margin: auto;
 }
 
 .function-description {
   margin-bottom: 24px;
-}
-
-@media only screen and (max-width: 900px) {
-  .experiment__main {
-    width: 90%;
-  }
 }

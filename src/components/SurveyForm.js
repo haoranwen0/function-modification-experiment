@@ -84,8 +84,8 @@ function SurveyForm() {
         <div className="form-slider-input-group margin-bottom-36">
           <div className="flex row space-between">
             <label htmlFor="survey question 1">
-              <span className="font-weight-600">2</span>. Did you find the
-              commentary in the functions (whenever there was one) useful?
+              <span className="font-weight-600">2</span>. In the problems with
+              comments in the code, did you find the comments useful?
             </label>
             <span>{quesTwo}</span>
           </div>

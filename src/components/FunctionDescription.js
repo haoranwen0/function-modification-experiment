@@ -5,7 +5,7 @@ function FunctionDescription(props) {
 
   return (
     <>
-      <h3>Function {currFunction + 1} Description</h3>
+      <h3>Problem {currFunction + 1} Description</h3>
       <p>{functions === null ? "" : functions[currFunction].description}</p>
     </>
   );

@@ -1,9 +1,3 @@
 .instructions__form {
   margin-top: 24px;
 }
-
-@media only screen and (max-width: 900px) {
-  .instructions__main {
-    width: 90%;
-  }
-}
