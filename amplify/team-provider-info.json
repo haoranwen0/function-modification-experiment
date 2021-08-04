@@ -19,11 +19,11 @@
         },
         "functionModificationFunctionSubmissions": {
           "deploymentBucketName": "amplify-functionmodification-dev-03128-deployment",
-          "s3Key": "amplify-builds/functionModificationFunctionSubmissions-7a486f454252526f7076-build.zip"
+          "s3Key": "amplify-builds/functionModificationFunctionSubmissions-66335954445438696533-build.zip"
         },
         "functionModificationSurvey": {
           "deploymentBucketName": "amplify-functionmodification-dev-03128-deployment",
-          "s3Key": "amplify-builds/functionModificationSurvey-3536736638526b544154-build.zip"
+          "s3Key": "amplify-builds/functionModificationSurvey-466f5833476a5a6e5152-build.zip"
         }
       }
     }

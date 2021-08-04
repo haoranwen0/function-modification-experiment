@@ -1,4 +1,7 @@
 {
-  "httpMethod": "POST",
-  "path": "/function-submissions"
+  "httpMethod": "GET",
+  "path": "/function-submissions",
+  "queryStringParameters": {
+    "email": "testing@gmail.com"
+  }
 }

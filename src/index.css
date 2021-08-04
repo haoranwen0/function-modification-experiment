@@ -25,6 +25,10 @@ h1 {
   margin-bottom: 24px;
 }
 
+h4 {
+  margin-bottom: 8px;
+}
+
 h3,
 p {
   margin-bottom: 12px;
@@ -148,6 +152,10 @@ textarea:focus {
   margin: 0 auto;
 }
 
+.width-100-percent {
+  width: 100%;
+}
+
 .font-weight-600 {
   font-weight: 600;
 }
@@ -164,11 +172,17 @@ textarea:focus {
 .table {
   border: 1px solid #dddddd;
   width: 100%;
+  font-size: 14px;
 }
 
 .table .body.lightgray {
   background-color: #fafafa;
   color: #000;
+}
+
+.table .body.black {
+  background-color: #222;
+  color: #fff;
 }
 
 .table .header,
@@ -180,7 +194,18 @@ textarea:focus {
 .table .cell {
   padding: 8px;
   text-align: center;
-  flex: 1;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table .select {
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.table .select:hover {
+  background: #26abff;
+  color: #fff;
 }
 
 @media only screen and (max-width: 900px) {
