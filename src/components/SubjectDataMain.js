@@ -8,9 +8,12 @@ import {
 } from "../constants/functions";
 import { patienceDiff } from "../functions/PatienceDiff";
 
-function SubjectDataMain(props) {
-  const { functionSubmission, currFunction, functionGroup } = props;
-
+function SubjectDataMain({
+  functionSubmission,
+  currFunction,
+  functionGroup,
+  dark,
+}) {
   const [submission, setSubmission] = useState([]);
   const [functions, setFunctions] = useState([]);
   const [diff, setDiff] = useState("");
@@ -74,6 +77,7 @@ function SubjectDataMain(props) {
               ? functions[currFunction].function
               : ""
           }
+          style={dark ? { backgroundColor: "#333333", color: "#fff" } : null}
         />
       </div>
       <div className="function">
@@ -87,11 +91,18 @@ function SubjectDataMain(props) {
               ? submission[currFunction].function
               : ""
           }
+          style={dark ? { backgroundColor: "#333333", color: "#fff" } : null}
         />
       </div>
       <div className="function">
         <h3>Comparision</h3>
-        <textarea name="" id="" readOnly value={diff} />
+        <textarea
+          name=""
+          id=""
+          readOnly
+          value={diff}
+          style={dark ? { backgroundColor: "#333333", color: "#fff" } : null}
+        />
       </div>
     </div>
   );

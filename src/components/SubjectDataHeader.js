@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-function SubjectDataHeader(props) {
+function SubjectDataHeader({
+  functionSubmission,
+  functionGroup,
+  onNext,
+  onPrev,
+  currFunction,
+  onToggleDarkTheme,
+  dark,
+}) {
   const [group, setGroup] = useState("");
   const [submission, setSubmission] = useState({});
-
-  const { functionSubmission, functionGroup, onNext, onPrev, currFunction } =
-    props;
 
   useEffect(() => {
     if (submission !== {}) {
@@ -68,6 +73,9 @@ function SubjectDataHeader(props) {
           }
         >
           Next
+        </span>
+        <span className="select" onClick={() => onToggleDarkTheme()}>
+          Dark Theme: {dark ? "On" : "Off"}
         </span>
         <span>Function Group: {group}</span>
         <span>Function {currFunction + 1}</span>

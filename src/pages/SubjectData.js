@@ -9,6 +9,7 @@ import "../css/SubjectData.css";
 function SubjectData() {
   const [subject, setSubject] = useState({});
   const [currFunction, setCurrFunction] = useState(0);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     // console.log(subject);
@@ -29,6 +30,10 @@ function SubjectData() {
     console.log("previous");
   };
 
+  const onToggleDarkTheme = () => {
+    setDark((prev) => !prev);
+  };
+
   return (
     <div className="subjectData">
       <header className="subjectData__header">
@@ -38,15 +43,21 @@ function SubjectData() {
           onNext={onNext}
           onPrev={onPrev}
           currFunction={currFunction}
+          onToggleDarkTheme={onToggleDarkTheme}
+          dark={dark}
         />
       </header>
-      <main className="subjectData__main">
+      <main
+        className="subjectData__main"
+        style={dark ? { backgroundColor: "#222222", color: "#fff" } : null}
+      >
         <SubjectDataMain
           currFunction={currFunction}
           functionSubmission={subject.functionSubmission}
           functionGroup={subject.functionGroup}
+          dark={dark}
         />
-        <SubjectDataSurvey survey={subject.survey} />
+        <SubjectDataSurvey survey={subject.survey} dark={dark} />
       </main>
     </div>
   );
