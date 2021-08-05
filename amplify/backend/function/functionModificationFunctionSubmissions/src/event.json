@@ -2,6 +2,7 @@
   "httpMethod": "GET",
   "path": "/function-submissions",
   "queryStringParameters": {
-    "email": "testing@gmail.com"
+    "operation": "scanSingle",
+    "email": "aliciamurkomen@gmail.com"
   }
 }

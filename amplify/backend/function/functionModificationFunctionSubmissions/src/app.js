@@ -148,49 +148,51 @@ app.get(path + "/object" + hashKeyPath + sortKeyPath, function (req, res) {
  * HTTP Get method for get all object *
  *************************************/
 app.get(path, function (req, res) {
-  const { email } = req.query;
-  // console.log(email);
+  const query = req.query;
+  const operation = query.operation;
+  var params = {};
 
-  var params = {
-    TableName: tableName,
-    Key: {
-      email: email,
-    },
-  };
+  if (operation === "scanAll") {
+    let dataItems = [];
+    params = {
+      TableName: tableName,
+    };
+    dynamodb.scan(params, onScan);
 
-  dynamodb.get(params, function (err, data) {
-    if (err) {
-      // console.log("error", err);
-      res.json({ status: "error", error: err });
-    } else {
-      // console.log("data", data.Item);
-      res.json({ status: "success", data: data.Item });
+    function onScan(err, data) {
+      if (err) {
+        res.json({ status: "error", error: err });
+      } else {
+        for (var i = 0; i < data.Items.length; i++) {
+          dataItems.push(data.Items[i]);
+        }
+        if (typeof data.LastEvaluatedKey != "undefined") {
+          params.ExclusiveStartKey = data.LastEvaluatedKey;
+          dynamodb.scan(params, onScan);
+        } else {
+          res.json({ status: "success", data: dataItems });
+          // console.log("data", dataItems);
+        }
+      }
     }
-  });
-
-  // let dataItems = [];
-
-  // var params = {
-  //   TableName: tableName,
-  // };
-
-  // dynamodb.scan(params, onScan);
-
-  // function onScan(err, data) {
-  //   if (err) {
-  //     res.json({ status: "error", error: err });
-  //   } else {
-  //     for (var i = 0; i < data.Items.length; i++) {
-  //       dataItems.push(data.Items[i]);
-  //     }
-  //     if (typeof data.LastEvaluatedKey != "undefined") {
-  //       params.ExclusiveStartKey = data.LastEvaluatedKey;
-  //       dynamodb.scan(params, onScan);
-  //     } else {
-  //       res.json({ status: "success", data: dataItems });
-  //     }
-  //   }
-  // }
+  } else if (operation === "scanSingle") {
+    const email = query.email;
+    params = {
+      TableName: tableName,
+      Key: {
+        email: email,
+      },
+    };
+    dynamodb.get(params, function (err, data) {
+      if (err) {
+        // console.log("error", err);
+        res.json({ status: "error", error: err });
+      } else {
+        // console.log("data", data.Item);
+        res.json({ status: "success", data: data.Item });
+      }
+    });
+  }
 });
 
 /************************************

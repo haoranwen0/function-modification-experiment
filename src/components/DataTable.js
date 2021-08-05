@@ -7,6 +7,8 @@ function DataTable(props) {
 
   const { subjects } = props;
 
+  console.log(subjects);
+
   const onSelect = (email) => {
     document.body.style.cursor = "wait";
     var subject = {};
@@ -19,6 +21,7 @@ function DataTable(props) {
     }
     API.get("functionModificationAPI", "/function-submissions", {
       queryStringParameters: {
+        operation: "scanSingle",
         email: email,
       },
     }).then((res) => {
@@ -40,6 +43,7 @@ function DataTable(props) {
         </div>
         <div className="cell">Sona ID</div>
         <div className="cell">Pilot Test #</div>
+        <div className="cell">Completion Status</div>
         <div className="cell">Submitted</div>
       </div>
       {subjects.map((subject, index) => (
@@ -51,6 +55,11 @@ function DataTable(props) {
           <div className="cell">{subject.email}</div>
           <div className="cell">{subject.sonaid}</div>
           <div className="cell">{subject.pilotTest}</div>
+          <div className="cell">
+            {subject.survey !== undefined
+              ? "Full Submission"
+              : subject.functionSubmissions + " problem(s)"}
+          </div>
           <div className="cell">
             {subject.submitted >= 1440 ? (
               <>{Math.round(subject.submitted / 1440)} days ago</>

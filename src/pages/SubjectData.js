@@ -35,7 +35,10 @@ function SubjectData() {
   };
 
   return (
-    <div className="subjectData">
+    <div
+      className="subjectData"
+      style={dark ? { backgroundColor: "#222222", color: "#fff" } : null}
+    >
       <header className="subjectData__header">
         <SubjectDataHeader
           functionGroup={subject.functionGroup}
@@ -47,17 +50,16 @@ function SubjectData() {
           dark={dark}
         />
       </header>
-      <main
-        className="subjectData__main"
-        style={dark ? { backgroundColor: "#222222", color: "#fff" } : null}
-      >
+      <main className="subjectData__main">
         <SubjectDataMain
           currFunction={currFunction}
           functionSubmission={subject.functionSubmission}
           functionGroup={subject.functionGroup}
           dark={dark}
         />
-        <SubjectDataSurvey survey={subject.survey} dark={dark} />
+        {subject.survey === undefined ? null : (
+          <SubjectDataSurvey survey={subject.survey} dark={dark} />
+        )}
       </main>
     </div>
   );
