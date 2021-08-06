@@ -1,6 +1,21 @@
 export const Aplus = {
-  description:
-    "A customer shopping in a store decides he never wants to leave again. Modify the class below so that the customer will always be able to add items to his cart. If adding an item to the cart will make the total value of the cart exceed a customer’s budget, then remove the most expensive item from that cart before adding the new item.",
+  description: `<p>A customer shopping in a store decides he never wants to leave again. Modify the class below so that the customer will always be able to add items to his cart. If adding an item to the cart will make the total value of the cart exceed a customer’s budget, then remove the most expensive item from that cart before adding the new item.</p><p>In the driver code the Cart is defined with a total budget of $6.00. An Item Banana is defined with a price of $5.00 and an Item Apple is defined with a price of $3.00. The Banana Item is added to the cart once, and calcTotalCost() returns $5. Then the Apple item is added to the cart and the calcTotalCost() returns $8.00. We want to modify the addItem() function so that when Apple is added to the cart, the most expensive Item, in this case the Banana, is removed.</p><p>Example Driver Code:</p><pre>public static void main(String args[]){
+        Cart cart = new Cart(6.00);
+        Item banana = new Item(5.00, "Banana");
+        Item apple = new Item(3.00, "Apple");
+        cart.addItem(banana);
+        System.out.println(cart.calcTotalCost());
+        System.out.println(cart.enoughMoney());
+        cart.addItem(apple);
+        System.out.println(cart.calcTotalCost());
+        System.out.println(cart.enoughMoney());
+    }</pre><p>The current output is:</p><pre>5.00
+True
+8.00
+False</pre><p>The intended output is:</p><pre>5.00
+True
+3.00
+True</pre>`,
   function: `import java.util.ArrayList;
 import java.util.Scanner;
  
@@ -78,8 +93,23 @@ through the array called shopCart and adds each item's price to totalCost. */
 };
 
 export const Aminus = {
-  description:
-    "A customer shopping in a store decides he never wants to leave again. Modify the class below so that the customer will always be able to add items to his cart. If adding an item to the cart will make the total value of the cart exceed a customer’s budget, then remove the most expensive item from that cart before adding the new item.",
+  description: `<p>A customer shopping in a store decides he never wants to leave again. Modify the class below so that the customer will always be able to add items to his cart. If adding an item to the cart will make the total value of the cart exceed a customer’s budget, then remove the most expensive item from that cart before adding the new item.</p><p>In the driver code the Cart is defined with a total budget of $6.00. An Item Banana is defined with a price of $5.00 and an Item Apple is defined with a price of $3.00. The Banana Item is added to the cart once, and calcTotalCost() returns $5. Then the Apple item is added to the cart and the calcTotalCost() returns $8.00. We want to modify the addItem() function so that when Apple is added to the cart, the most expensive Item, in this case the Banana, is removed.</p><p>Example Driver Code:</p><pre>public static void main(String args[]){
+        Cart cart = new Cart(6.00);
+        Item banana = new Item(5.00, "Banana");
+        Item apple = new Item(3.00, "Apple");
+        cart.addItem(banana);
+        System.out.println(cart.calcTotalCost());
+        System.out.println(cart.enoughMoney());
+        cart.addItem(apple);
+        System.out.println(cart.calcTotalCost());
+        System.out.println(cart.enoughMoney());
+    }</pre><p>The current output is:</p><pre>5.00
+True
+8.00
+False</pre><p>The intended output is:</p><pre>5.00
+True
+3.00
+True</pre>`,
   function: `import java.util.ArrayList;
 import java.util.Scanner;
  
@@ -117,7 +147,7 @@ public class Cart{
  
             for (int i = 1; i < shopCart.size(); i++){
                 if (shopCart.get(i).getCost() > mostExpensive){
-                    highestCost = shopCart.get(i).getPrice();
+                    mostExpensive = shopCart.get(i).getPrice();
                     index = i;
                 }
             }
@@ -148,8 +178,7 @@ public class Cart{
 };
 
 export const Bplus = {
-  description:
-    "Andres types the word s. It is considered that it successfully said hello if several letters can be deleted so that it results in “hello” so that “ahhellloou” is good but ‘hlelooo’ isn’t. Help him edit this function to print “YES” if Andres managed to say hello and otherwise print “NO”.",
+  description: `<p>Andres types the word s. It is considered that it successfully said hello if several letters can be deleted so that it results in “hello” so that “ahhellloou” is good but ‘hlelooo’ isn’t. Help him edit this function to print “YES” if Andres managed to say hello and otherwise print “NO”.</p><p>Right now, regardless of input, the driver code prints nothing. We want the code to print "YES" if the word input follows the conventions above and print "NO" otherwise.</p>`,
   function: `import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -179,8 +208,7 @@ public class Hello {
 };
 
 export const Bminus = {
-  description:
-    "Andres types the word s. It is considered that it successfully said hello if several letters can be deleted so that it results in “hello” so that “ahhellloou” is good but ‘hlelooo’ isn’t. Help him edit this function to print “YES” if Andres managed to say hello and otherwise print “NO”.",
+  description: `<p>Andres types the word s. It is considered that it successfully said hello if several letters can be deleted so that it results in “hello” so that “ahhellloou” is good but ‘hlelooo’ isn’t. Help him edit this function to print “YES” if Andres managed to say hello and otherwise print “NO”.</p><p>Right now, regardless of input, the driver code prints nothing. We want the code to print "YES" if the word input follows the conventions above and print "NO" otherwise.</p>`,
   function: `import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -206,12 +234,12 @@ public class Hello {
                 }
             }
             index = temp;
-        }`,
+        }
+}`,
 };
 
 export const Cplus = {
-  description:
-    "Modify the code below so that the gradeDiff() function will also return the average GPA of all students in the Teacher’s class.",
+  description: `<p>Modify the code below so that the gradeDiff() function will also return the average GPA of all students in the Teacher’s class.</p><p>Let us define our student list as follows, StudentList = [S1, S2, S3]. S1 has a GPA of 100, S2 has a GPA of 40, S3 has a GPA of 10. Right now gradeDiff() returns 90, we want gradeDiff() to return 50, the average of all the students in the StudentList.</p>`,
   function: `public class Teacher{
  
     private String name;
@@ -293,8 +321,7 @@ export const Cplus = {
 };
 
 export const Cminus = {
-  description:
-    "Modify the code below so that the gradeDiff() function will also return the average GPA of all students in the Teacher’s class.",
+  description: `<p>Modify the code below so that the gradeDiff() function will also return the average GPA of all students in the Teacher’s class.</p><p>Let us define our student list as follows, StudentList = [S1, S2, S3]. S1 has a GPA of 100, S2 has a GPA of 40, S3 has a GPA of 10. Right now gradeDiff() returns 90, we want gradeDiff() to return 50, the average of all the students in the StudentList.</p>`,
   function: `public class Teacher{
  
     private String name;
@@ -363,8 +390,7 @@ export const Cminus = {
 };
 
 export const Dplus = {
-  description: `You are a high school teacher and are given a very important task for the school year. You must give the student with an ID of 9 (0 indexed) a prize for a student of the year! There is one problem, though, your student list is not sorted and you do not have access to the list itself, you don't know the numbers in the list. Using the algorithms below, modify the distribute_gift function so that the gift is returned to the student whose actual ID is 9.
-  You can assume that the list of students passed into distribute_gift is at least length 10 and that the student with ID 9 is in the list, but you cannot assume that each student is represented in the list. For example a student list can be as such [2, 0, 3, 9, 10, 22, 1, 15, 202, 11].`,
+  description: `<p>You are a high school teacher and are given a very important task for the school year. You must give the student with an ID of 9 (0 indexed) a prize for a student of the year! There is one problem, though, your student list is not sorted and you do not have access to the list itself, you don't know the numbers in the list. Using the algorithms below, modify the distribute_gift function so that the gift is returned to the student whose actual ID is 9.</p><p>You can assume that the list of students passed into distribute_gift is at least length 10 and that the student with ID 9 is in the list, but you cannot assume that each student is represented in the list.</p><p>For example a student list can be as such [2, 0, 3, 9, 10, 22, 1, 15, 202, 11], right now the code in distribute gift would take the example list and print [0, 1, 2, 3, 9, 10, 11, 15, 22, 202] then return 202. We want to return 9, indicating the student with ID 9.</p>`,
   function: `public class Gift {
 
     /* A function f that takes a sorted integer array arr, a starting index l, 
@@ -410,8 +436,7 @@ export const Dplus = {
 };
 
 export const Dminus = {
-  description: `You are a high school teacher and are given a very important task for the school year. You must give the student with an ID of 9 (0 indexed) a prize for a student of the year! There is one problem, though, your student list is not sorted and you do not have access to the list itself, you don't know the numbers in the list. Using the algorithms below, modify the distribute_gift function so that the gift is returned to the student whose actual ID is 9.
-  You can assume that the list of students passed into distribute_gift is at least length 10 and that the student with ID 9 is in the list, but you cannot assume that each student is represented in the list. For example a student list can be as such [2, 0, 3, 9, 10, 22, 1, 15, 202, 11].`,
+  description: `<p>You are a high school teacher and are given a very important task for the school year. You must give the student with an ID of 9 (0 indexed) a prize for a student of the year! There is one problem, though, your student list is not sorted and you do not have access to the list itself, you don't know the numbers in the list. Using the algorithms below, modify the distribute_gift function so that the gift is returned to the student whose actual ID is 9.</p><p>You can assume that the list of students passed into distribute_gift is at least length 10 and that the student with ID 9 is in the list, but you cannot assume that each student is represented in the list.</p><p>For example a student list can be as such [2, 0, 3, 9, 10, 22, 1, 15, 202, 11], right now the code in distribute gift would take the example list and print [0, 1, 2, 3, 9, 10, 11, 15, 22, 202] then return 202. We want to return 9, indicating the student with ID 9.</p>`,
   function: `public class Gift {
 
     public int f(int arr[], int l, int r, int x)
@@ -447,14 +472,15 @@ export const Dminus = {
 
     public int distribute_gift(int unordered_arr[]) {
 
+				s(unordered_arr)
+				System.out.println(unordered_arr);
         return unordered_arr[9];
     }
 }`,
 };
 
 export const Eplus = {
-  description:
-    "Modify the class below so that the reliability function will return 'true' if a given array is reliable and 'false' if that array is not reliable. An array is reliable if the median is within 1 standard deviation of the mean.",
+  description: `<p>Modify the class below so that the reliability function will return 'true' if a given array is reliable and 'false' if that array is not reliable. An array is reliable if the median is within 1 standard deviation of the mean. You may assume that arrays are sorted in ascending order.</p><p>As of now given an array [5, 10, 20, 30], the Median is 10.5, the Mean is 16.25, the Standard Deviation is ~9.60. If Median falls within 1 standard deviation of the mean, meaning it falls in the range (16.25 - 9.6, 16.25 + 9.6) = (6.65, 25.85), which 10.5 clearly does, then reliability should return True. Right now given the array [5, 10, 20, 30], reliability returns False, the task is to correct this error.</p>`,
   function: `public class Statistics {
 
 	/* A function A that takes an integer array as a parameter 
@@ -550,7 +576,7 @@ export const Eplus = {
     }
 
 	public boolean reliability(int arr[]) {
-        if (Median(int[arr]) == Mean(int[arr])){
+        if (A(int[arr]) == B(int[arr])){
 
             return true
 
@@ -565,8 +591,7 @@ export const Eplus = {
 };
 
 export const Eminus = {
-  description:
-    "Modify the class below so that the reliability function will return 'true' if a given array is reliable and 'false' if that array is not reliable. An array is reliable if the median is within 1 standard deviation of the mean.",
+  description: `<p>Modify the class below so that the reliability function will return 'true' if a given array is reliable and 'false' if that array is not reliable. An array is reliable if the median is within 1 standard deviation of the mean. You may assume that arrays are sorted in ascending order.</p><p>As of now given an array [5, 10, 20, 30], the Median is 10.5, the Mean is 16.25, the Standard Deviation is ~9.60. If Median falls within 1 standard deviation of the mean, meaning it falls in the range (16.25 - 9.6, 16.25 + 9.6) = (6.65, 25.85), which 10.5 clearly does, then reliability should return True. Right now given the array [5, 10, 20, 30], reliability returns False, the task is to correct this error.</p>`,
   function: `public class Statistics {
 	
 	public int A(int arr[]){
@@ -655,7 +680,7 @@ export const Eminus = {
     }
 
 	public boolean reliability(int arr[]) {
-        if (Median(int[arr]) == Mean(int[arr])){
+        if (A(int[arr]) == B(int[arr])){
 
             return true
 

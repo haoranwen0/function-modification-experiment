@@ -1,4 +1,5 @@
 import React from "react";
+import ReactHtmlParser from "react-html-parser";
 
 function FunctionDescription(props) {
   const { functions, currFunction } = props;
@@ -6,7 +7,11 @@ function FunctionDescription(props) {
   return (
     <>
       <h3>Problem {currFunction + 1} Description</h3>
-      <p>{functions === null ? "" : functions[currFunction].description}</p>
+      <>
+        {ReactHtmlParser(
+          functions === null ? "" : functions[currFunction].description
+        )}
+      </>
     </>
   );
 }

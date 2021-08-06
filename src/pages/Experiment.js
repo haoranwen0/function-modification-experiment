@@ -55,6 +55,7 @@ function Experiment() {
         body: {
           email: email,
           functionSubmissions: functionSubmissions,
+          pilotTest: 2,
         },
       }).then((res) => {
         // console.log(res);

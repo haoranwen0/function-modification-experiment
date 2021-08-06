@@ -30,8 +30,15 @@ h4 {
 }
 
 h3,
-p {
+p,
+pre {
   margin-bottom: 12px;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 input[type="range"] {

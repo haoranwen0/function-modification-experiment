@@ -78,7 +78,7 @@ function InstructionsForm() {
             javaExperience: sliderJavaExperience[javaExperience],
             functionGroup: functionGroup,
             registrationTime: date,
-            pilotTest: 1,
+            pilotTest: 2,
           };
           API.post("functionModificationAPI", "/subject-informations", {
             body: data,

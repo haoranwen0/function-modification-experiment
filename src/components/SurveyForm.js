@@ -42,6 +42,7 @@ function SurveyForm() {
         questionSix: quesSix.trim() === "" ? "N/A" : quesSix,
         comment: comment.trim() === "" ? "N/A" : comment,
         submissionTime: submissionTime,
+        pilotTest: 2,
       };
       setLoading((prev) => !prev);
       API.post("functionModificationAPI", "/survey", {
