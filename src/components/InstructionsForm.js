@@ -78,7 +78,7 @@ function InstructionsForm() {
             javaExperience: sliderJavaExperience[javaExperience],
             functionGroup: functionGroup,
             registrationTime: date,
-            pilotTest: 2,
+            pilotTest: "Upwork-1",
           };
           API.post("functionModificationAPI", "/subject-informations", {
             body: data,
@@ -115,7 +115,7 @@ function InstructionsForm() {
           />
         </div>
         <div className="form-text-input-group">
-          <label htmlFor="sonaid">SonaID</label>
+          <label htmlFor="sonaid">Location</label>
           <input
             type="text"
             value={sonaid}

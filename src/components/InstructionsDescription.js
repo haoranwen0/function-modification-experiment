@@ -65,6 +65,9 @@ function InstructionsDescription() {
         It's best to complete this on a desktop/laptop on full screen using
         Google Chrome as your browser.
       </p>
+      <p>
+        Please put "<b>Upwork</b>" in the Location input.
+      </p>
     </>
   );
 }
